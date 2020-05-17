@@ -11,11 +11,11 @@ from sklearn.metrics.pairwise import cosine_similarity
 def create_sim():
     data = pd.read_csv('data.csv')
     # creating a count matrix
-    #cv = CountVectorizer()
-    #count_matrix = cv.fit_transform(data['comb'])
+    cv = CountVectorizer()
+    count_matrix = cv.fit_transform(data['comb'])
     # creating a similarity score matrix
-    #sim = cosine_similarity(count_matrix)
-    sim = load('similarity_matrix.npy')
+    sim = cosine_similarity(count_matrix)
+    #sim = load('similarity_matrix.npy')
     return data, sim
 
 
